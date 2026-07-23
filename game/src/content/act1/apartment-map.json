@@ -2,7 +2,7 @@
   "size": { "width": 30, "height": 20 },
   "tileSize": 32,
   "playerSpawn": { "x": 14, "y": 15 },
-  "miaSpawn": { "x": 26, "y": 16 },
+  "miaSpawn": { "x": 18, "y": 14 },
   "furniture": [
     { "id": "desk", "kind": "desk", "x": 4, "y": 4, "width": 6, "height": 2 },
     { "id": "sofa", "kind": "sofa", "x": 11, "y": 9, "width": 5, "height": 2 },
