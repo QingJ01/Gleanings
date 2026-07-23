@@ -4,6 +4,19 @@
 
 > AdventureX 2026 参赛项目
 
+## 可玩第一幕
+
+`game/` 已落地第一幕《开坛》的完整桌面垂直切片：公寓探索、纸箱与字条、米娅对白、
+酒坛三选一、长按揭坛、记忆转场、结算、自动存档和刷新恢复均可运行。
+
+```bash
+cd game
+pnpm install
+pnpm dev
+```
+
+详细操作、内容修改与测试说明见 [game/README.md](game/README.md)。
+
 ## 文档
 
 - [设计文档.md](设计文档.md) — 完整项目设计（赛道策略、玩法、逐幕脚本、区块链/AI 设计、开发计划、文书）
@@ -11,6 +24,8 @@
 - [素材需求.md](素材需求.md) — 全部素材清单（美术/UI/音频/文案/NFT 元数据，含规格与优先级）
 - [纯 2D RPG 设计](docs/plans/2026-07-23-pure-2d-rpg-design.md) — 640×360 画布、地图规模、tile/sprite/UI、状态与像素质量门槛
 - [纯 2D RPG 制作计划](docs/plans/2026-07-23-pure-2d-rpg-implementation.md) — v2 素材与集成任务
+- [第一幕制作级设计](docs/plans/2026-07-23-act1-open-jar-design.md) — 《开坛》3–5 分钟完整体验、状态与验收标准
+- [第一幕实施计划](docs/plans/2026-07-23-act1-open-jar-implementation.md) — React + Phaser 落地与验证步骤
 - [v1 视觉风格设计](docs/plans/2026-07-23-visual-style-assets-design.md) — 旧“闽地民俗标本馆”参考，已由纯 RPG v2 取代
 - [链上设计.md](链上设计.md) — 完整链上方案（资产模型、合约、铸造与防作弊、元数据、部署、安全、测试）
 - [contracts/Gleanings.sol](contracts/Gleanings.sol) — ERC-721 藏品合约（信物 + 徽章，OZ v5，已编译通过）
