@@ -21,6 +21,15 @@ export type QuestMarkerTarget = {
   offsetY: number;
 };
 
+export type MiaEntrancePolicy = {
+  spawnTile: TilePosition;
+  standTile: TilePosition;
+  cameraFocusTile: TilePosition;
+  cameraPanMs: number;
+  walkDelayMs: number;
+  walkDurationMs: number;
+};
+
 const BAKED_MAP_INTERACTABLES = new Set([
   "obj_cardboard_box",
   "obj_laojiu_jar"
@@ -37,6 +46,20 @@ export function apartmentBackgroundPolicy(): ApartmentBackgroundPolicy {
     assetPath: "/maps/map_apartment_source.png",
     nativeSize: { width: 1536, height: 1024 },
     worldSize: { width: 960, height: 640 }
+  };
+}
+
+export function miaEntrancePolicy(map: {
+  miaSpawn: TilePosition;
+  miaStand: TilePosition;
+}): MiaEntrancePolicy {
+  return {
+    spawnTile: { ...map.miaSpawn },
+    standTile: { ...map.miaStand },
+    cameraFocusTile: { x: 22, y: 11 },
+    cameraPanMs: 420,
+    walkDelayMs: 220,
+    walkDurationMs: 900
   };
 }
 

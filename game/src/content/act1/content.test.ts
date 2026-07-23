@@ -54,13 +54,15 @@ describe("act one content", () => {
     expect(act1Content.map.size).toEqual({ width: 30, height: 20 });
     expect(act1Content.map.tileSize).toBe(32);
     expect(act1Content.map.playerSpawn).toEqual({ x: 14, y: 15 });
-    expect(act1Content.map.miaSpawn).toEqual({ x: 18, y: 14 });
+    expect(act1Content.map.miaSpawn).toEqual({ x: 26, y: 16 });
+    expect(act1Content.map.miaStand).toEqual({ x: 20, y: 12 });
   });
 
   it("keeps map rectangles aligned to the quarter-tile pixel grid", () => {
     for (const rectangle of [
       ...act1Content.map.furniture,
-      ...act1Content.map.collisions
+      ...act1Content.map.collisions,
+      ...act1Content.map.occluders
     ]) {
       for (const value of [
         rectangle.x,
