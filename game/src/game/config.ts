@@ -1,6 +1,8 @@
 import Phaser from "phaser";
+import { ActOneCompleteScene } from "./scenes/ActOneCompleteScene";
 import { ApartmentScene } from "./scenes/ApartmentScene";
 import { BootScene } from "./scenes/BootScene";
+import { MemoryTransitionScene } from "./scenes/MemoryTransitionScene";
 
 export const GAME_WIDTH = 640;
 export const GAME_HEIGHT = 360;
@@ -35,6 +37,11 @@ export function createGameConfig(
       roundPixels: true,
       pixelArt: true
     },
-    scene: [BootScene, ApartmentScene]
+    scene: [
+      BootScene,
+      ApartmentScene,
+      MemoryTransitionScene,
+      ActOneCompleteScene
+    ]
   };
 }

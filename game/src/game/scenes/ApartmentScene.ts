@@ -363,11 +363,24 @@ export class ApartmentScene extends Phaser.Scene {
     this.dispatch({ type: "START_OPEN_JAR" });
     this.hud.setPrompt(null);
     this.hud.setHoldProgress(0);
+    this.jarSprite.setTexture("obj-jar-open");
+    this.cameras.main.stopFollow();
+    this.tweens.add({
+      targets: this.cameras.main,
+      scrollX: Math.min(
+        this.cameras.main.scrollX + act1Content.map.tileSize,
+        act1Content.map.size.width * act1Content.map.tileSize - 640
+      ),
+      duration: 420,
+      ease: "Cubic.easeOut"
+    });
     this.dialogue.play(dialogueGroup("transition"), () => {
-      this.cameras.main.flash(420, 234, 221, 197);
-      this.jarSprite.setTexture("obj-jar-open");
       this.dispatch({ type: "COMPLETE" });
-      this.dialogue.play(dialogueGroup("complete"));
+      this.hud.setVisible(false);
+      this.scene.launch("MemoryTransition", {
+        choice: this.state.senseChoice
+      });
+      this.scene.pause();
     });
   }
 

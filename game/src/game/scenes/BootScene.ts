@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { SaveService } from "../systems/SaveService";
 
 type FailedFile = {
   key?: string;
@@ -75,6 +76,13 @@ export class BootScene extends Phaser.Scene {
   create(): void {
     if (this.failedAssets.size > 0) {
       this.showLoadError([...this.failedAssets]);
+      return;
+    }
+    const saved = new SaveService(window.localStorage).load();
+    if (saved.phase === "COMPLETE") {
+      this.scene.start("ActOneComplete", {
+        choice: saved.senseChoice
+      });
       return;
     }
     this.scene.start("Apartment");
