@@ -1,5 +1,7 @@
 import Phaser from "phaser";
+import { sceneForChapterAct } from "../domain/ChapterRoute";
 import { apartmentBackgroundPolicy } from "../render/SceneVisualPolicy";
+import { ChapterSaveService } from "../systems/ChapterSaveService";
 import { SaveService } from "../systems/SaveService";
 
 type FailedFile = {
@@ -131,6 +133,11 @@ export class BootScene extends Phaser.Scene {
   create(): void {
     if (this.failedAssets.size > 0) {
       this.showLoadError([...this.failedAssets]);
+      return;
+    }
+    const chapter = new ChapterSaveService(window.localStorage).load();
+    if (chapter !== null) {
+      this.scene.start(sceneForChapterAct(chapter.currentAct));
       return;
     }
     const saved = new SaveService(window.localStorage).load();
