@@ -30,14 +30,14 @@
   {
     "id": "obj_photo",
     "kind": "optional",
-    "tile": { "x": 13, "y": 7 },
+    "tile": { "x": 15, "y": 8 },
     "range": 1,
     "dialogueGroup": "inspectPhoto"
   },
   {
     "id": "obj_takeout",
     "kind": "optional",
-    "tile": { "x": 18, "y": 13 },
+    "tile": { "x": 12, "y": 12 },
     "range": 1,
     "dialogueGroup": "inspectTakeout"
   },

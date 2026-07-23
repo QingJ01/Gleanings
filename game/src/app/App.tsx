@@ -1,4 +1,14 @@
+import { useEffect } from "react";
+import { startGame } from "../game/startGame";
+
 export function App() {
+  useEffect(() => {
+    const game = startGame("game-root");
+    return () => {
+      game.destroy(true);
+    };
+  }, []);
+
   return (
     <main className="app-shell">
       <header className="game-masthead" aria-label="游戏标题">

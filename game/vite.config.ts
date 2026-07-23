@@ -7,6 +7,7 @@ export default defineConfig({
   publicDir: resolve(process.cwd(), "../assets/rpg_v2"),
   build: {
     outDir: "dist",
-    emptyOutDir: true
+    emptyOutDir: true,
+    chunkSizeWarningLimit: 1600
   }
 });
