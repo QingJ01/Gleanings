@@ -56,7 +56,9 @@ describe("ApartmentRenderer geometry", () => {
 
   it.each([
     [620, 224],
-    [456, 368]
+    [456, 368],
+    [200, 340],
+    [212, 400]
   ])(
     "keeps visible floor at pixel (%i, %i) walkable",
     (x, y) => {
@@ -67,7 +69,13 @@ describe("ApartmentRenderer geometry", () => {
   it.each([
     [144, 208, "desk_collision"],
     [276, 272, "sofa_collision"],
-    [212, 400, "boxes_collision"],
+    [88, 340, "boxes_upper_left_collision"],
+    [136, 352, "boxes_upper_center_collision"],
+    [160, 368, "boxes_upper_right_collision"],
+    [88, 448, "boxes_left_collision"],
+    [144, 400, "boxes_center_collision"],
+    [150, 460, "boxes_red_collision"],
+    [192, 420, "boxes_right_collision"],
     [240, 496, "parcel_collision"],
     [720, 272, "kitchen_island_collision"],
     [850, 304, "jar_collision"],
