@@ -3,13 +3,18 @@ import type { DialogueLine } from "../../content/act1/content";
 import { DialogueSystem } from "../systems/DialogueSystem";
 
 export class DialogueBox {
+  private readonly scene: Phaser.Scene;
   private readonly container: Phaser.GameObjects.Container;
   private readonly speakerText: Phaser.GameObjects.Text;
   private readonly bodyText: Phaser.GameObjects.Text;
+  private readonly advanceText: Phaser.GameObjects.Text;
   private readonly dialogue = new DialogueSystem();
+  private currentVoice: Phaser.Sound.BaseSound | null = null;
+  private waitForVoiceUnlock = false;
   private onComplete: (() => void) | null = null;
 
   constructor(scene: Phaser.Scene) {
+    this.scene = scene;
     const panel = scene.add
       .rectangle(20, 238, 600, 106, 0x211a17, 0.97)
       .setOrigin(0)
@@ -32,7 +37,7 @@ export class DialogueBox {
       lineSpacing: 6,
       wordWrap: { width: 530 }
     });
-    const advance = scene.add
+    this.advanceText = scene.add
       .text(594, 320, "E 继续 ▾", {
         fontFamily: '"Cascadia Mono", Consolas, monospace',
         fontSize: "9px",
@@ -47,11 +52,15 @@ export class DialogueBox {
         accent,
         this.speakerText,
         this.bodyText,
-        advance
+        this.advanceText
       ])
       .setScrollFactor(0)
       .setDepth(20_000)
       .setVisible(false);
+
+    scene.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.stopVoice();
+    });
   }
 
   get isActive(): boolean {
@@ -71,6 +80,14 @@ export class DialogueBox {
 
   advance(): void {
     if (!this.isActive) return;
+    if (this.waitForVoiceUnlock) {
+      // Do not let a browser that refuses audio autoplay block the story.
+      this.waitForVoiceUnlock = false;
+      this.advanceText.setText("E 继续 ▾");
+      return;
+    }
+
+    this.stopVoice();
     const result = this.dialogue.advance();
     if (result.line !== null) {
       this.renderLine(result.line);
@@ -81,11 +98,64 @@ export class DialogueBox {
     const completion = this.onComplete;
     this.onComplete = null;
     this.container.setVisible(false);
+    this.advanceText.setText("E 继续 ▾");
     completion?.();
   }
 
   private renderLine(line: DialogueLine): void {
     this.speakerText.setText(line.speakerName);
     this.bodyText.setText(line.text);
+    this.playVoice(line);
+  }
+
+  private playVoice(line: DialogueLine): void {
+    this.stopVoice();
+    this.waitForVoiceUnlock = false;
+    this.advanceText.setText("E 继续 ▾");
+    if (
+      line.voiceKey === undefined ||
+      !this.scene.cache.audio.exists(line.voiceKey)
+    ) {
+      return;
+    }
+    if (this.scene.sound.locked) {
+      this.waitForVoiceUnlock = true;
+      this.advanceText.setText("E 开启声音 ▾");
+      this.playVoiceWhenUnlocked(line.voiceKey);
+      return;
+    }
+    this.startVoice(line.voiceKey);
+  }
+
+  private playVoiceWhenUnlocked(voiceKey: string): void {
+    this.scene.sound.once(Phaser.Sound.Events.UNLOCKED, () => {
+      if (
+        this.isActive &&
+        this.dialogue.current()?.voiceKey === voiceKey
+      ) {
+        this.waitForVoiceUnlock = false;
+        this.advanceText.setText("E 继续 ▾");
+        this.startVoice(voiceKey);
+      }
+    });
+  }
+
+  private startVoice(voiceKey: string): void {
+    this.stopVoice();
+    const voice = this.scene.sound.add(voiceKey, { volume: 0.9 });
+    this.currentVoice = voice;
+    voice.once(Phaser.Sound.Events.COMPLETE, () => {
+      if (this.currentVoice !== voice) return;
+      voice.destroy();
+      this.currentVoice = null;
+    });
+    voice.play();
+  }
+
+  private stopVoice(): void {
+    if (this.currentVoice === null) return;
+    this.currentVoice.stop();
+    this.currentVoice.destroy();
+    this.currentVoice = null;
   }
 }

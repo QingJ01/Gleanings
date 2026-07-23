@@ -7,14 +7,21 @@ import mapJson from "./apartment-map.json";
 export type DialogueLine = {
   speakerId: string;
   speakerName: string;
+  voiceKey?: string;
   text: string;
 };
 
 export type DialogueChoice = {
   value: SenseChoice;
   label: string;
+  voiceKey: string;
   feedback: string;
   motif: string;
+};
+
+export type VoiceoverAsset = {
+  key: string;
+  path: string;
 };
 
 export type QuestContent = {
@@ -63,6 +70,20 @@ export const act1Content = {
 
 export function dialogueGroup(id: string): DialogueLine[] {
   return act1Content.dialogue.groups[id] ?? [];
+}
+
+export function act1VoiceoverAssets(): VoiceoverAsset[] {
+  const voiceKeys = [
+    ...Object.values(act1Content.dialogue.groups)
+      .flat()
+      .map((line) => line.voiceKey),
+    ...act1Content.dialogue.choices.map((choice) => choice.voiceKey)
+  ].filter((key): key is string => key !== undefined);
+
+  return [...new Set(voiceKeys)].map((key) => ({
+    key,
+    path: `/audio/act1/${key}.mp3`
+  }));
 }
 
 export function questContent(id: string): QuestContent {

@@ -17,6 +17,7 @@
 | `objects/obj_laojiu_jar_open_32x64.png` | 32×64 | 揭坛状态 |
 | `items/it_taipo_note_32x32.png` | 32×32 | 太婆字条背包图标 |
 | `fx/fx_jar_memory_640x360.png` | 640×360 RGBA | 酒香记忆转场 |
+| `audio/act1/*.mp3` | 24 文件 / 32kHz mono | 全部实装对白与三个感知分支配音 |
 
 ## 已完成的首批风格锚
 
@@ -43,10 +44,12 @@
 - 禁止抗锯齿、渐变、模糊、柔光、景深、伪 3D 与高分辨率插画缩小冒充像素素材。
 - 摄像机位置、UI 坐标和角色落点全部取整数。
 - 浏览器必须设置 `image-rendering: pixelated`，Phaser 需启用 `pixelArt: true` 和 `roundPixels: true`。
+- 第一幕配音文件名必须与对白数据中的 `voiceKey` 一致；句尾不保留生成器蜂鸣。
 
 ## 当前状态
 
-首批素材已达到尺寸、网格、色板和透明通道规范，可用于搭建垂直切片。
+首批视觉素材已达到尺寸、网格、色板和透明通道规范；第一幕 24 条配音已完成蜂鸣截除并
+接入对白系统，可用于垂直切片。
 tileset 仍是风格锁定稿，扩建正式地图前需要人工补做无缝边缘、碰撞标记与文化审核。
 
 生产记录见 `manifest/assets.manifest.json`，提示词与后处理规则见

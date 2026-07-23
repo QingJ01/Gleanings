@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { questSystem } from "../../game/systems/QuestSystem";
 import type { Act1Phase } from "../../game/domain/act1State";
-import { act1Content } from "./content";
+import { act1Content, act1VoiceoverAssets } from "./content";
 
 const phases: Act1Phase[] = [
   "ARRIVE",
@@ -48,6 +48,26 @@ describe("act one content", () => {
       "hongqu_red",
       "cold_clay"
     ]);
+  });
+
+  it("maps every playable dialogue and choice response to unique voiceover", () => {
+    const playableLines = Object.entries(act1Content.dialogue.groups)
+      .filter(([group]) => group !== "complete")
+      .flatMap(([, lines]) => lines);
+    const keys = [
+      ...playableLines.map((line) => line.voiceKey),
+      ...act1Content.dialogue.choices.map((choice) => choice.voiceKey)
+    ];
+
+    expect(keys).toHaveLength(24);
+    expect(keys.every((key) => key !== undefined)).toBe(true);
+    expect(new Set(keys).size).toBe(24);
+    expect(act1VoiceoverAssets()).toHaveLength(24);
+    expect(
+      act1VoiceoverAssets().every(
+        ({ key, path }) => path === `/audio/act1/${key}.mp3`
+      )
+    ).toBe(true);
   });
 
   it("defines the approved map dimensions and spawn points", () => {

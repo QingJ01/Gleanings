@@ -395,6 +395,7 @@ export class ApartmentScene extends Phaser.Scene {
       const feedback: DialogueLine = {
         speakerId: "narrator",
         speakerName: `感知 · ${selected.motif}`,
+        voiceKey: selected.voiceKey,
         text: selected.feedback
       };
       this.dialogue.play([feedback]);

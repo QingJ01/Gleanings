@@ -4,11 +4,13 @@
       {
         "speakerId": "narrator",
         "speakerName": "旁白",
+        "voiceKey": "vo_act1_001_narrator",
         "text": "凌晨一点，窗外的城市仍亮着。"
       },
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_002_yi",
         "text": "太婆寄来的最后一箱东西……我拖了三个月还没整理。"
       }
     ],
@@ -16,6 +18,7 @@
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_004_yi",
         "text": "旧衣服、药袋，还有……一张字条。"
       }
     ],
@@ -23,11 +26,13 @@
       {
         "speakerId": "taipo_note",
         "speakerName": "太婆的字条",
+        "voiceKey": "vo_act1_005_taipo",
         "text": "小怡，等你想家了，就开。——太婆"
       },
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_006_yi",
         "text": "她知道我一定会把它带到这里。"
       }
     ],
@@ -35,31 +40,37 @@
       {
         "speakerId": "actor_mia",
         "speakerName": "米娅",
+        "voiceKey": "vo_act1_007_mia",
         "text": "你还没睡？"
       },
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_008_yi",
         "text": "在整理太婆留下的东西。"
       },
       {
         "speakerId": "actor_mia",
         "speakerName": "米娅",
+        "voiceKey": "vo_act1_009_mia",
         "text": "就是那坛一直没开的酒？"
       },
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_010_yi",
         "text": "嗯。她让我“等想家了再开”。"
       },
       {
         "speakerId": "actor_mia",
         "speakerName": "米娅",
+        "voiceKey": "vo_act1_011_mia",
         "text": "那你现在想家吗？"
       },
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_012_yi",
         "text": "……我不知道。"
       }
     ],
@@ -67,6 +78,7 @@
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_003_yi",
         "text": "像是在等我想起什么。"
       }
     ],
@@ -74,6 +86,7 @@
       {
         "speakerId": "narrator",
         "speakerName": "旁白",
+        "voiceKey": "vo_act1_018_narrator",
         "text": "红布、封泥和冰凉的陶壁，在夜里安静得过分。"
       }
     ],
@@ -81,16 +94,19 @@
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_022_yi",
         "text": "太婆，我开了。"
       },
       {
         "speakerId": "actor_mia",
         "speakerName": "米娅",
+        "voiceKey": "vo_act1_023_mia",
         "text": "林怡……你看见了吗？"
       },
       {
         "speakerId": "narrator",
         "speakerName": "旁白",
+        "voiceKey": "vo_act1_024_narrator",
         "text": "酒香没有散开。它像一条路，把你拉进一场很久以前的冬天。"
       }
     ],
@@ -98,6 +114,7 @@
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_013_yi",
         "text": "英文账单压着三通未接来电。国内那边，已经是早晨了。"
       }
     ],
@@ -105,6 +122,7 @@
       {
         "speakerId": "narrator",
         "speakerName": "旁白",
+        "voiceKey": "vo_act1_015_narrator",
         "text": "这里的夜从不真正变黑，家乡的清晨却已经开始。"
       }
     ],
@@ -112,6 +130,7 @@
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_016_yi",
         "text": "照片里的太婆还很年轻，手指却已经被红曲染红。"
       }
     ],
@@ -119,6 +138,7 @@
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_017_yi",
         "text": "凉掉的外卖。又忘了吃晚饭。"
       }
     ],
@@ -126,6 +146,7 @@
       {
         "speakerId": "actor_yi",
         "speakerName": "林怡",
+        "voiceKey": "vo_act1_014_yi",
         "text": "阿妈发来的语音还没点开。"
       }
     ],
@@ -141,18 +162,21 @@
     {
       "value": "aroma",
       "label": "那股香气",
+      "voiceKey": "vo_act1_019_narrator",
       "feedback": "坛口尚未打开，房间里却浮起一点暖意。",
       "motif": "温情"
     },
     {
       "value": "hongqu_red",
       "label": "那一抹红",
+      "voiceKey": "vo_act1_020_narrator",
       "feedback": "红布与封泥像一枚尚未揭开的印记。",
       "motif": "工艺"
     },
     {
       "value": "cold_clay",
       "label": "坛身的凉",
+      "voiceKey": "vo_act1_021_narrator",
       "feedback": "陶坛带着跨越多年也没有散去的凉意。",
       "motif": "时间"
     }

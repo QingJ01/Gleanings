@@ -1,4 +1,5 @@
 import Phaser from "phaser";
+import { act1VoiceoverAssets } from "../../content/act1/content";
 import { apartmentBackgroundPolicy } from "../render/SceneVisualPolicy";
 import { SaveService } from "../systems/SaveService";
 
@@ -72,6 +73,9 @@ export class BootScene extends Phaser.Scene {
     );
     this.load.image("item-note", "/items/it_taipo_note_32x32.png");
     this.load.image("fx-jar-memory", "/fx/fx_jar_memory_640x360.png");
+    for (const voiceover of act1VoiceoverAssets()) {
+      this.load.audio(voiceover.key, voiceover.path);
+    }
   }
 
   create(): void {

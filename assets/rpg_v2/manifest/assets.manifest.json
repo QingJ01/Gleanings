@@ -19,6 +19,18 @@
     "tile_alignment": "passed",
     "runtime_integration": "passed"
   },
+  "audio": {
+    "act1_voiceover": {
+      "directory": "assets/rpg_v2/audio/act1",
+      "file_count": 24,
+      "format": "mp3",
+      "sample_rate": 32000,
+      "channels": 1,
+      "status": "runtime_integrated",
+      "source": "project_team_voiceover",
+      "processing": "trim_final_beep_tail_and_apply_40ms_fade"
+    }
+  },
   "assets": [
     {
       "asset_id": "preview_brewery_gameplay",

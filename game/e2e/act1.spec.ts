@@ -52,6 +52,9 @@ test.describe("第一幕《开坛》", () => {
     await page.reload({ waitUntil: "networkidle" });
     await expect(page.locator("canvas")).toBeVisible();
 
+    // The first press unlocks browser audio and starts the opening voiceover.
+    await press(page, "e");
+    await page.waitForTimeout(500);
     await press(page, "e");
     await press(page, "e");
     await hold(page, "ArrowLeft", 2_450);
