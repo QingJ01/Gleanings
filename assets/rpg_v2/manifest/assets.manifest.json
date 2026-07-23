@@ -1,0 +1,110 @@
+{
+  "schema_version": "1.0",
+  "batch": "pure-2d-rpg-v2",
+  "generated_at": "2026-07-23",
+  "prompt_version": "rpg-style-v2.0",
+  "native_canvas": [640, 360],
+  "tile_size": [32, 32],
+  "actor_frame": [32, 48],
+  "palette": "assets/rpg_v2/palette/fujian_rpg_24.png",
+  "palette_limit": 24,
+  "scale_policy": "integer-nearest-neighbor-only",
+  "cultural_review": "pending",
+  "assets": [
+    {
+      "asset_id": "preview_brewery_gameplay",
+      "file": "assets/rpg_v2/previews/preview_brewery_gameplay_640x360.png",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB",
+      "status": "visual_review",
+      "source": "image_gen_plus_palette_quantization",
+      "engine_role": "style_anchor"
+    },
+    {
+      "asset_id": "map_brewery_full",
+      "file": "assets/rpg_v2/maps/map_brewery_full_1280x896.png",
+      "width": 1280,
+      "height": 896,
+      "grid": [40, 28],
+      "status": "visual_review",
+      "source": "deterministic_tileset_assembly",
+      "engine_role": "map_layout_anchor"
+    },
+    {
+      "asset_id": "tileset_brewery",
+      "file": "assets/rpg_v2/tilesets/tileset_brewery_256x256.png",
+      "width": 256,
+      "height": 256,
+      "grid": [8, 8],
+      "cell": [32, 32],
+      "status": "visual_review",
+      "source": "image_gen_plus_cell_repack_and_palette_quantization",
+      "engine_role": "tileset_style_anchor",
+      "integration_note": "manual seamless-edge and collision pass required before final maps"
+    },
+    {
+      "asset_id": "spr_yi_walk",
+      "file": "assets/rpg_v2/sprites/spr_yi_walk_96x192.png",
+      "width": 96,
+      "height": 192,
+      "grid": [3, 4],
+      "cell": [32, 48],
+      "directions": ["down", "left", "right", "up"],
+      "frames": ["step_a", "idle", "step_b"],
+      "alpha": "hard_0_255",
+      "status": "visual_review",
+      "source": "image_gen_plus_chroma_key_cell_repack_and_palette_quantization",
+      "engine_role": "player_walk_sheet"
+    },
+    {
+      "asset_id": "obj_hongqu_tray",
+      "file": "assets/rpg_v2/objects/obj_hongqu_tray_32x32.png",
+      "width": 32,
+      "height": 32,
+      "alpha": "hard_0_255",
+      "status": "visual_review",
+      "source": "tileset_extraction",
+      "engine_role": "interactive_object"
+    },
+    {
+      "asset_id": "it_hongqu_sample",
+      "file": "assets/rpg_v2/items/it_hongqu_sample_32x32.png",
+      "width": 32,
+      "height": 32,
+      "alpha": "hard_0_255",
+      "status": "visual_review",
+      "source": "object_derivative",
+      "engine_role": "inventory_icon"
+    },
+    {
+      "asset_id": "it_relic_dongniang_detail",
+      "file": "assets/rpg_v2/items/it_relic_dongniang_detail_128x128.png",
+      "width": 128,
+      "height": 128,
+      "alpha": "hard_0_255",
+      "status": "visual_review",
+      "source": "v1_relic_pixel_reduction",
+      "engine_role": "relic_detail"
+    },
+    {
+      "asset_id": "ui_rpg_hud",
+      "file": "assets/rpg_v2/ui/ui_rpg_hud_640x360.png",
+      "width": 640,
+      "height": 360,
+      "alpha": "hard_0_255",
+      "status": "visual_review",
+      "source": "deterministic_pixel_layout",
+      "engine_role": "hud_reference_overlay"
+    },
+    {
+      "asset_id": "style_board_rpg_v2",
+      "file": "assets/rpg_v2/previews/style_board_rpg_v2_1920x1080.png",
+      "width": 1920,
+      "height": 1080,
+      "status": "ready",
+      "source": "deterministic_layout",
+      "engine_role": "review_deliverable"
+    }
+  ]
+}
