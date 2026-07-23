@@ -1,0 +1,10 @@
+{
+  "name": "gleanings-railway-service",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Railway entrypoint for the Gleanings collection sharing service",
+  "scripts": {
+    "build": "npm --prefix rpg-chain-kit ci",
+    "start": "npm --prefix rpg-chain-kit start"
+  }
+}
