@@ -1,8 +1,12 @@
 import { useEffect, useState } from "react";
 import { startGame } from "../game/startGame";
 import { MedalService } from "../game/systems/MedalService";
+import { resolveChainOrigin } from "./chainConfig";
 
-const CHAIN_ORIGIN = import.meta.env.VITE_CHAIN_BRIDGE_URL ?? "http://127.0.0.1:3100";
+const CHAIN_ORIGIN = resolveChainOrigin(
+  import.meta.env.VITE_CHAIN_BRIDGE_URL,
+  import.meta.env.DEV
+);
 
 type Collectible = { id: string; name: string; description: string; source: string; kind: "道具" | "勋章" };
 type ChainAsset = { token_id: string; item?: { collectible_id?: string; medal_id?: string; name?: string; description?: string; category?: string; item_type?: string; source?: string } };
@@ -57,8 +61,7 @@ function ChainArchive() {
     };
     syncWallet();
     window.addEventListener("focus", syncWallet);
-    const timer = window.setInterval(syncWallet, 1500);
-    return () => { window.removeEventListener("focus", syncWallet); window.clearInterval(timer); };
+    return () => { window.removeEventListener("focus", syncWallet); };
   }, [syncVersion]);
 
   const refreshChainCollection = () => {
