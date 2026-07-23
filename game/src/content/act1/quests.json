@@ -1,0 +1,37 @@
+[
+  {
+    "id": "act1_move",
+    "title": "在房间里走走",
+    "hint": "使用 WASD 或方向键移动"
+  },
+  {
+    "id": "act1_find_box",
+    "title": "整理太婆寄来的纸箱",
+    "hint": "纸箱在房间左下方"
+  },
+  {
+    "id": "act1_read_note",
+    "title": "看看太婆留下的话",
+    "hint": "按 I 打开背包"
+  },
+  {
+    "id": "act1_find_jar",
+    "title": "找到太婆留下的酒坛",
+    "hint": "酒坛在厨房旁边"
+  },
+  {
+    "id": "act1_choose_sense",
+    "title": "你最先注意到什么？",
+    "hint": "选择没有对错"
+  },
+  {
+    "id": "act1_open_jar",
+    "title": "揭开红布",
+    "hint": "在酒坛前长按 E"
+  },
+  {
+    "id": "act1_complete",
+    "title": "冬酿记忆已解锁",
+    "hint": "第一幕完成"
+  }
+]
