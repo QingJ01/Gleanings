@@ -105,6 +105,101 @@
       "status": "ready",
       "source": "deterministic_layout",
       "engine_role": "review_deliverable"
+    },
+    {
+      "asset_id": "preview_apartment_gameplay",
+      "file": "assets/rpg_v2/previews/preview_apartment_gameplay_640x360.png",
+      "width": 640,
+      "height": 360,
+      "mode": "RGB",
+      "status": "visual_review",
+      "source": "image_gen_plus_palette_quantization",
+      "engine_role": "act1_style_anchor"
+    },
+    {
+      "asset_id": "map_apartment_full",
+      "file": "assets/rpg_v2/maps/map_apartment_full_960x640.png",
+      "width": 960,
+      "height": 640,
+      "grid": [30, 20],
+      "status": "integration",
+      "source": "deterministic_tileset_assembly",
+      "engine_role": "act1_map"
+    },
+    {
+      "asset_id": "tileset_apartment",
+      "file": "assets/rpg_v2/tilesets/tileset_apartment_256x256.png",
+      "width": 256,
+      "height": 256,
+      "grid": [8, 8],
+      "cell": [32, 32],
+      "status": "integration",
+      "source": "image_gen_plus_nine_row_parse_cell_repack_and_palette_quantization",
+      "engine_role": "act1_tileset"
+    },
+    {
+      "asset_id": "spr_mia_walk",
+      "file": "assets/rpg_v2/sprites/spr_mia_walk_96x192.png",
+      "width": 96,
+      "height": 192,
+      "grid": [3, 4],
+      "cell": [32, 48],
+      "directions": ["down", "left", "right", "up"],
+      "frames": ["step_a", "idle", "step_b"],
+      "alpha": "hard_0_255",
+      "status": "integration",
+      "source": "image_gen_plus_chroma_key_cell_repack_and_palette_quantization",
+      "engine_role": "act1_npc_walk_sheet"
+    },
+    {
+      "asset_id": "obj_cardboard_box",
+      "file": "assets/rpg_v2/objects/obj_cardboard_box_32x32.png",
+      "width": 32,
+      "height": 32,
+      "alpha": "hard_0_255",
+      "status": "integration",
+      "source": "tileset_extraction",
+      "engine_role": "act1_interactive_object"
+    },
+    {
+      "asset_id": "obj_laojiu_jar_sealed",
+      "file": "assets/rpg_v2/objects/obj_laojiu_jar_sealed_32x64.png",
+      "width": 32,
+      "height": 64,
+      "alpha": "hard_0_255",
+      "status": "integration",
+      "source": "tileset_extraction",
+      "engine_role": "act1_interactive_object"
+    },
+    {
+      "asset_id": "obj_laojiu_jar_open",
+      "file": "assets/rpg_v2/objects/obj_laojiu_jar_open_32x64.png",
+      "width": 32,
+      "height": 64,
+      "alpha": "hard_0_255",
+      "status": "integration",
+      "source": "tileset_extraction",
+      "engine_role": "act1_object_state"
+    },
+    {
+      "asset_id": "it_taipo_note",
+      "file": "assets/rpg_v2/items/it_taipo_note_32x32.png",
+      "width": 32,
+      "height": 32,
+      "alpha": "hard_0_255",
+      "status": "integration",
+      "source": "deterministic_pixel_drawing",
+      "engine_role": "act1_inventory_icon"
+    },
+    {
+      "asset_id": "fx_jar_memory",
+      "file": "assets/rpg_v2/fx/fx_jar_memory_640x360.png",
+      "width": 640,
+      "height": 360,
+      "alpha": "fx_partial_allowed",
+      "status": "integration",
+      "source": "deterministic_pixel_drawing",
+      "engine_role": "act1_transition_overlay"
     }
   ]
 }
