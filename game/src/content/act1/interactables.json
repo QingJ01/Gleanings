@@ -1,0 +1,51 @@
+[
+  {
+    "id": "obj_cardboard_box",
+    "kind": "main",
+    "tile": { "x": 6, "y": 13 },
+    "range": 1,
+    "dialogueGroup": "box"
+  },
+  {
+    "id": "obj_laojiu_jar",
+    "kind": "main",
+    "tile": { "x": 25, "y": 8 },
+    "range": 1,
+    "dialogueGroup": "jarReady"
+  },
+  {
+    "id": "obj_desk",
+    "kind": "optional",
+    "tile": { "x": 7, "y": 5 },
+    "range": 1,
+    "dialogueGroup": "inspectDesk"
+  },
+  {
+    "id": "obj_window",
+    "kind": "optional",
+    "tile": { "x": 15, "y": 3 },
+    "range": 1,
+    "dialogueGroup": "inspectWindow"
+  },
+  {
+    "id": "obj_photo",
+    "kind": "optional",
+    "tile": { "x": 15, "y": 8 },
+    "range": 1,
+    "dialogueGroup": "inspectPhoto"
+  },
+  {
+    "id": "obj_takeout",
+    "kind": "optional",
+    "tile": { "x": 12, "y": 12 },
+    "range": 1,
+    "dialogueGroup": "inspectTakeout"
+  },
+  {
+    "id": "obj_phone",
+    "kind": "optional",
+    "tile": { "x": 9, "y": 5 },
+    "range": 1,
+    "dialogueGroup": "inspectPhone"
+  }
+]

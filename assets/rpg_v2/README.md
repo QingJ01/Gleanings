@@ -3,6 +3,21 @@
 本目录是 v2 的独立生产线。`assets/` 下原有 Batch 0 继续保留为题材与文化参考，
 不得作为游戏内素材与本目录混用。
 
+## 第一幕《开坛》素材
+
+| 文件 | 规格 | 用途 |
+|---|---:|---|
+| `previews/preview_apartment_gameplay_640x360.png` | 640×360 | 海外公寓实机视觉锚 |
+| `maps/map_apartment_full_960x640.png` | 30×20 tiles | 第一幕完整可滚动地图 |
+| `tilesets/tileset_apartment_256x256.png` | 8×8 / 32×32 | 公寓 tileset |
+| `sprites/spr_yi_walk_96x192.png` | 3×4 / 32×48 | 林怡四方向三帧行走表 |
+| `sprites/spr_mia_walk_96x192.png` | 3×4 / 32×48 | 米娅四方向三帧行走表 |
+| `objects/obj_cardboard_box_32x32.png` | 32×32 | 太婆纸箱 |
+| `objects/obj_laojiu_jar_sealed_32x64.png` | 32×64 | 封坛状态 |
+| `objects/obj_laojiu_jar_open_32x64.png` | 32×64 | 揭坛状态 |
+| `items/it_taipo_note_32x32.png` | 32×32 | 太婆字条背包图标 |
+| `fx/fx_jar_memory_640x360.png` | 640×360 RGBA | 酒香记忆转场 |
+
 ## 已完成的首批风格锚
 
 | 文件 | 规格 | 用途 |
@@ -10,7 +25,7 @@
 | `previews/preview_brewery_gameplay_640x360.png` | 640×360 | 酒坊实机视口 |
 | `maps/map_brewery_full_1280x896.png` | 40×28 tiles | 大于视口的酒坊完整地图 |
 | `tilesets/tileset_brewery_256x256.png` | 8×8 / 32×32 | 酒坊 tileset 风格锚 |
-| `sprites/spr_yi_walk_96x192.png` | 3×4 / 32×48 | Yi 四方向三帧行走表 |
+| `sprites/spr_yi_walk_96x192.png` | 3×4 / 32×48 | 林怡四方向三帧行走表 |
 | `objects/obj_hongqu_tray_32x32.png` | 32×32 | 红曲盘场景物件 |
 | `items/it_hongqu_sample_32x32.png` | 32×32 | 红曲样品背包图标 |
 | `items/it_relic_dongniang_detail_128x128.png` | 128×128 | 冬酿曲印遗物详情 |

@@ -1,0 +1,28 @@
+{
+  "size": { "width": 30, "height": 20 },
+  "tileSize": 32,
+  "playerSpawn": { "x": 14, "y": 15 },
+  "miaSpawn": { "x": 26, "y": 16 },
+  "furniture": [
+    { "id": "desk", "kind": "desk", "x": 4, "y": 4, "width": 6, "height": 2 },
+    { "id": "sofa", "kind": "sofa", "x": 11, "y": 9, "width": 5, "height": 2 },
+    { "id": "rug", "kind": "rug", "x": 10, "y": 11, "width": 8, "height": 5 },
+    { "id": "kitchen", "kind": "counter", "x": 21, "y": 4, "width": 7, "height": 3 },
+    { "id": "shelf", "kind": "shelf", "x": 3, "y": 8, "width": 2, "height": 3 },
+    { "id": "bed", "kind": "bed", "x": 3, "y": 15, "width": 5, "height": 3 },
+    { "id": "entry", "kind": "entry", "x": 23, "y": 16, "width": 5, "height": 2 }
+  ],
+  "collisions": [
+    { "id": "wall_top", "x": 0, "y": 0, "width": 30, "height": 4 },
+    { "id": "wall_left", "x": 0, "y": 0, "width": 2, "height": 20 },
+    { "id": "wall_right", "x": 28, "y": 0, "width": 2, "height": 20 },
+    { "id": "wall_bottom", "x": 0, "y": 17, "width": 30, "height": 3 },
+    { "id": "desk_collision", "x": 2, "y": 3, "width": 6, "height": 3 },
+    { "id": "sofa_collision", "x": 9, "y": 7, "width": 6, "height": 3 },
+    { "id": "table_collision", "x": 10, "y": 10, "width": 5, "height": 3 },
+    { "id": "kitchen_collision", "x": 18, "y": 2, "width": 9, "height": 6 },
+    { "id": "boxes_collision", "x": 2, "y": 10, "width": 4, "height": 6 },
+    { "id": "jar_collision", "x": 25, "y": 6, "width": 2, "height": 3 },
+    { "id": "entry_collision", "x": 23, "y": 11, "width": 4, "height": 6 }
+  ]
+}

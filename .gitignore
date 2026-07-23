@@ -5,6 +5,8 @@ AdventureX_2026赛道与奖金整理.xlsx
 node_modules/
 dist/
 build/
+test-results/
+playwright-report/
 .env
 .env.*
 
